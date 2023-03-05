@@ -2,8 +2,7 @@
 public class Slide {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Game begin.");
+		System.out.println("Check this out...");
 	}
 
 }
