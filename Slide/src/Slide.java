@@ -2,19 +2,36 @@
 public class Slide {
 
 	public static void main(String[] args) {
+		//Setting up a demo array of images, will get dynamic image source array from Azaken's code once we add that
+		String arr[][] = new String[][] {{"Demo tiles/tile0_0.png", "Demo tiles/tile0_1.png", "Demo tiles/tile0_2.png"}, {"Demo tiles/tile1_0.png", "Demo tiles/tile1_1.png", "Demo tiles/tile1_2.png"}, {"Demo tiles/tile2_0.png", "Demo tiles/tile2_1.png", "Demo tiles/tile2_2.png"}};
 		
-		Tile tile1 = new Tile();
-		tile1.setID(0);
-		tile1.setX(0);
-		tile1.setY(1);
+		Tile tiles[][] = setup(arr);
 		
-		Tile tile2 = new Tile();
-		tile2.setID(1);
-		tile2.setX(0);
-		tile2.setY(0);
-		
-		System.out.println("Tile 1 has ID: " + tile1.getID() + " and is at position (" + tile1.getX() + ", " + tile1.getY() + ")");
-		System.out.println(String.format("Tile 2 has ID: %d and is at position (%d, %d)", tile2.getID(), tile2.getX(), tile2.getY()));
+		// Placeholder code to test if everything is working as it is supposed to
+		for (Tile[] row : tiles) {
+			for (Tile tile: row) {
+			System.out.println(String.format("Tile at position (%d, %d) with image %s and having ID %d", tile.getX(), tile.getY(), tile.getImg(), tile.getID()));
+			}
+		}
+	}
+	
+	
+	public static Tile[][] setup(String[][] links) {
+		Tile tiles[][] = new Tile[links.length][links[0].length];
+ 		for (int i = 0; i < links.length; i++) {
+ 			for (int j = 0; j < links[i].length; j++) {
+	 			Tile temp = new Tile();
+	 			
+	 			int id = i * links[i].length + j;
+				temp.setID(id);
+				
+				temp.setImg(links[i][j]);
+				temp.setX(i);
+				temp.setY(j);
+				tiles[i][j] = temp;
+ 			}
+		}
+		return tiles;
 	}
 
 }
