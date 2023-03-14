@@ -1,11 +1,13 @@
-
 public class Slide {
 
 	public static void main(String[] args) {
-		//Setting up a demo array of images, will get dynamic image source array from Azaken's code once we add that
-		String arr[][] = new String[][] {{"Demo tiles/tile0_0.png", "Demo tiles/tile0_1.png", "Demo tiles/tile0_2.png"}, {"Demo tiles/tile1_0.png", "Demo tiles/tile1_1.png", "Demo tiles/tile1_2.png"}, {"Demo tiles/tile2_0.png", "Demo tiles/tile2_1.png", "Demo tiles/tile2_2.png"}};
+		// Setting up a demo array of images, will get dynamic image source array from Azaken's code once we add that
+		String arr[][] = new String[][] {{"Demo tiles/tile0_0.png", "Demo tiles/taile0_1.png", "Demo tiles/tile0_2.png"}, {"Demo tiles/tile1_0.png", "Demo tiles/tile1_1.png", "Demo tiles/tile1_2.png"}, {"Demo tiles/tile2_0.png", "Demo tiles/tile2_1.png", "Demo tiles/tile2_2.png"}};
 		
 		Tile tiles[][] = setup(arr);
+		
+		
+		
 		
 		// Placeholder code to test if everything is working as it is supposed to
 		for (Tile[] row : tiles) {
@@ -26,12 +28,13 @@ public class Slide {
 				temp.setID(id);
 				
 				temp.setImg(links[i][j]);
-				temp.setX(i);
-				temp.setY(j);
+				temp.setY(i);
+				temp.setX(j);
 				tiles[i][j] = temp;
  			}
 		}
 		return tiles;
 	}
+
 
 }
