@@ -7,8 +7,17 @@ public class Tile {
 	private int tileY;
 	private boolean isEmpty = false;
 	
+	// Constructors
+	public Tile(int ID, String img ,int x, int y) {
+		tileID = ID;
+		tileImg = img;
+		tileX = x;
+		tileY = y;
+	}
 	
-	//getters
+	public Tile(){}
+	
+	//Getters
 	public int getID() {
 		return tileID;
 	}
@@ -29,7 +38,8 @@ public class Tile {
 		return isEmpty;
 	}
 	
-	//setters
+	
+	//Setters
 	public void setID(int ID) {
 		tileID = ID;
 	}
@@ -49,6 +59,8 @@ public class Tile {
 	public void setEmpty(boolean a) {
 		isEmpty = a;
 	}
+	
+
 	
 	public static void main(String[] args) {
 
