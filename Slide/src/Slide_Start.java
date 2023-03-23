@@ -16,7 +16,9 @@ public class Slide_Start implements ActionListener,MouseListener{
     JButton Start,Exit,Settings;
     JLabel Welcome,ver_label;
 
-
+    
+    Color Foreground_Color = Color.CYAN;
+    
     Slide_Start(){
 
         image = new ImageIcon("C:\\Users\\Rohit Sinha\\SlideGameGUI\\SlideGameGUI\\OIP (1).jpg");
@@ -35,26 +37,26 @@ public class Slide_Start implements ActionListener,MouseListener{
         center = new JPanel();
         center.setBackground(Color.BLACK);
         center.setLayout(new GridLayout(2,1));
-        center.setBorder(BorderFactory.createLineBorder(new Color(255,145,43),3));
+        center.setBorder(BorderFactory.createLineBorder(Foreground_Color,3));
 
         north = new JPanel();
         north.setBackground(Color.BLACK);
-        north.setBorder(BorderFactory.createLineBorder(new Color(255,145,43),3));
+        north.setBorder(BorderFactory.createLineBorder(Foreground_Color,3));
         
         south = new JPanel();
         south.setBackground(Color.BLACK);
         south.setLayout(new BorderLayout());
-        south.setBorder(BorderFactory.createLineBorder(new Color(255,145,43),3));
+        south.setBorder(BorderFactory.createLineBorder(Foreground_Color,3));
         
         Welcome = new JLabel("Ready To Slide!");
         Welcome.setBackground(Color.BLACK);
-        Welcome.setForeground(new Color(255,145,43));
+        Welcome.setForeground(Foreground_Color);
         Welcome.setFont(new Font("MV Boli",Font.BOLD,40));
         Welcome.setFocusable(false);
         
         ver_label = new JLabel("SlideGame Version 1.0.0.1 ");
         ver_label.setBackground(Color.BLACK);
-        ver_label.setForeground(new Color(255,145,43));
+        ver_label.setForeground(Foreground_Color);
         ver_label.setFont(new Font("MV Boli",Font.BOLD,20));
         ver_label.setFocusable(false);
         
@@ -63,7 +65,7 @@ public class Slide_Start implements ActionListener,MouseListener{
 
         Start.setPreferredSize(new Dimension(50,400));
         Start.setBackground(Color.BLACK);
-        Start.setForeground(new Color(255,145,43));
+        Start.setForeground(Foreground_Color);
         Start.setFont(new Font("MV Boli",Font.PLAIN,75));
         Start.setBorder(null);
         Start.setFocusable(false);
@@ -72,7 +74,7 @@ public class Slide_Start implements ActionListener,MouseListener{
 
         Exit.setPreferredSize(new Dimension(50,400));
         Exit.setBackground(Color.BLACK);
-        Exit.setForeground(new Color(255,145,43));
+        Exit.setForeground(Foreground_Color);
         Exit.setBorder(null);
         Exit.setFont(new Font("MV Boli",Font.PLAIN,75));
         Exit.setFocusable(false);
@@ -84,7 +86,7 @@ public class Slide_Start implements ActionListener,MouseListener{
         Settings.setIcon(setpic);
         Settings.setPreferredSize(new Dimension(40,40));
         Settings.setBackground(Color.BLACK);
-        Settings.setForeground(new Color(255,145,43));
+        Settings.setForeground(Foreground_Color);
         Settings.setBorder(null);
         Settings.setFont(new Font("MV Boli",Font.PLAIN,75));
         Settings.setFocusable(false);
@@ -135,7 +137,7 @@ public class Slide_Start implements ActionListener,MouseListener{
     public void actionPerformed(ActionEvent args) {
         
         if(args.getSource()==Start){
-            //new Game_Screen();
+            new Slide_Game();
             frame.dispose();
             
         }
@@ -152,7 +154,7 @@ public class Slide_Start implements ActionListener,MouseListener{
     public void mouseClicked(MouseEvent e) {
         if(e.getSource() == Start){
             Start.setBackground(Color.BLACK);
-            Start.setForeground(new Color(255,145,43));
+            Start.setForeground(Foreground_Color);
             
             
         }
@@ -162,7 +164,7 @@ public class Slide_Start implements ActionListener,MouseListener{
     @Override
     public void mouseEntered(MouseEvent e) {
         if(e.getSource()==Start){
-            Start.setBackground(new Color(255,145,43));
+            Start.setBackground(Foreground_Color);
             Start.setForeground(Color.BLACK);
             Start.setFont(new Font("MV Boli",Font.BOLD,95));
             
@@ -170,7 +172,7 @@ public class Slide_Start implements ActionListener,MouseListener{
 
         }
         if(e.getSource()==Exit){
-            Exit.setBackground(new Color(255,145,43));
+            Exit.setBackground(Foreground_Color);
             Exit.setForeground(Color.BLACK);
             Exit.setFont(new Font("MV Boli",Font.BOLD,95));
 
@@ -184,12 +186,12 @@ public class Slide_Start implements ActionListener,MouseListener{
     public void mouseExited(MouseEvent e) {
         if(e.getSource()==Start){
             Start.setBackground(Color.BLACK);
-            Start.setForeground(new Color(255,145,43));
+            Start.setForeground(Foreground_Color);
             Start.setFont(new Font("MV Boli",Font.PLAIN,75));
         }
         if(e.getSource()==Exit){
             Exit.setBackground(Color.BLACK);
-            Exit.setForeground(new Color(255,145,43));
+            Exit.setForeground(Foreground_Color);
             Exit.setFont(new Font("MV Boli",Font.PLAIN,75));
         }
         
@@ -199,7 +201,7 @@ public class Slide_Start implements ActionListener,MouseListener{
     public void mousePressed(MouseEvent e) {
         if(e.getSource() == Start){
             Start.setBackground(Color.BLACK);
-            Start.setForeground(new Color(255,145,43));
+            Start.setForeground(Foreground_Color);
 ;
         }
         
@@ -210,7 +212,7 @@ public class Slide_Start implements ActionListener,MouseListener{
         if(e.getSource() == Start){
             Start.setPreferredSize(new Dimension(100,400));
             Start.setBackground(Color.BLACK);
-            Start.setForeground(new Color(255,145,43));
+            Start.setForeground(Foreground_Color);
             Start.setFont(new Font("MV Boli",Font.BOLD,75));
             Start.setBorder(null);
             Start.setFocusable(false);
