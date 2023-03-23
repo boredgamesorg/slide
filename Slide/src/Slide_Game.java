@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
@@ -63,4 +64,9 @@ public class Slide_Game implements ActionListener,MouseListener{
 		// TODO Auto-generated method stub
 		
 	}
+=======
+
+public class Slide_Game {
+
+>>>>>>> 686488e16348e6c7c52319e7cd9ddae660e992c1
 }
