@@ -24,7 +24,6 @@ public class Settings_Window implements ActionListener,MouseListener{
 	JComboBox<String> choiceBox;
 	JLabel Choice_Label;
 	
-<<<<<<< HEAD
 	Color Foreground_Color = Color.CYAN;
 	
 	Settings_Window(){
@@ -32,12 +31,6 @@ public class Settings_Window implements ActionListener,MouseListener{
 	   image = new ImageIcon("C:\\Users\\Rohit Sinha\\SlideGameGUI\\SlideGameGUI\\OIP (1).jpg");
 	   
 	   
-=======
-	Settings_Window(){
-	   
-	   image = new ImageIcon("C:\\Users\\Rohit Sinha\\SlideGameGUI\\SlideGameGUI\\OIP (1).jpg");
-
->>>>>>> 686488e16348e6c7c52319e7cd9ddae660e992c1
 		
 	   Settings_Frame= new JFrame();
 
@@ -53,19 +46,11 @@ public class Settings_Window implements ActionListener,MouseListener{
        
        Head = new JPanel();
        Head.setBackground(Color.BLACK);
-<<<<<<< HEAD
        Head.setBorder(BorderFactory.createLineBorder(Foreground_Color,2));
        
        Body = new JPanel();
        Body.setBackground(Color.BLACK);
        Body.setBorder(BorderFactory.createLineBorder(Foreground_Color,2));
-=======
-       Head.setBorder(BorderFactory.createLineBorder(new Color(255,145,43),2));
-       
-       Body = new JPanel();
-       Body.setBackground(Color.BLACK);
-       Body.setBorder(BorderFactory.createLineBorder(new Color(255,145,43),2));
->>>>>>> 686488e16348e6c7c52319e7cd9ddae660e992c1
        Body.setLayout(new BorderLayout());
        
        Container= new JPanel();
@@ -75,50 +60,28 @@ public class Settings_Window implements ActionListener,MouseListener{
        
        //Foot = new JPanel();
        //Foot.setBackground(Color.BLACK);
-<<<<<<< HEAD
        //Foot.setBorder(BorderFactory.createLineBorder(Foreground_Color,2));
        
        Choice_Label = new JLabel("Choose Starting Tile");
        Choice_Label.setBackground(Color.BLACK);
        Choice_Label.setForeground(Foreground_Color);
-=======
-       //Foot.setBorder(BorderFactory.createLineBorder(new Color(255,145,43),2));
-       
-       Choice_Label = new JLabel("Choose Starting Tile");
-       Choice_Label.setBackground(Color.BLACK);
-       Choice_Label.setForeground(new Color(255,145,43));
->>>>>>> 686488e16348e6c7c52319e7cd9ddae660e992c1
        Choice_Label.setFont(new Font("MV Boli",Font.BOLD,20));
        Choice_Label.setFocusable(false);
        
        String[] choices = {"Upper Left", "Lower Right"};
        choiceBox = new JComboBox<>(choices);
-<<<<<<< HEAD
        choiceBox.setForeground(Foreground_Color);
        choiceBox.setSelectedIndex(-1);
        choiceBox.setBackground(Color.BLACK);
        choiceBox.setUI(new CustomComboBoxUI());
        choiceBox.setBorder(BorderFactory.createLineBorder(Foreground_Color,2));
-=======
-       choiceBox.setForeground(new Color(255,145,43));
-       choiceBox.setSelectedIndex(-1);
-       choiceBox.setBackground(Color.BLACK);
-       choiceBox.setUI(new CustomComboBoxUI());
-       choiceBox.setBorder(BorderFactory.createLineBorder(new Color(255,145,43),2));
->>>>>>> 686488e16348e6c7c52319e7cd9ddae660e992c1
        //choiceBox.hasFocus();
        
        Confirm = new JButton("Confirm");
        Confirm.setBackground(Color.BLACK);
-<<<<<<< HEAD
        Confirm.setForeground(Foreground_Color);
        Confirm.setFont(new Font("MV Boli",Font.PLAIN,13));
        Confirm.setBorder(BorderFactory.createLineBorder(Foreground_Color,1));
-=======
-       Confirm.setForeground(new Color(255,145,43));
-       Confirm.setFont(new Font("MV Boli",Font.PLAIN,13));
-       Confirm.setBorder(BorderFactory.createLineBorder(new Color(255,145,43),1));
->>>>>>> 686488e16348e6c7c52319e7cd9ddae660e992c1
        
        Confirm.addActionListener(this);
        
@@ -160,11 +123,7 @@ public class Settings_Window implements ActionListener,MouseListener{
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-<<<<<<< HEAD
 		Confirm.setBackground(Foreground_Color);
-=======
-		Confirm.setBackground(new Color(255,145,43));
->>>>>>> 686488e16348e6c7c52319e7cd9ddae660e992c1
         Confirm.setForeground(Color.BLACK);
         Confirm.setFont(new Font("MV Boli",Font.BOLD,13));
 		
@@ -173,11 +132,7 @@ public class Settings_Window implements ActionListener,MouseListener{
 	@Override
 	public void mouseExited(MouseEvent e) {
 		Confirm.setBackground(Color.BLACK);
-<<<<<<< HEAD
         Confirm.setForeground(Foreground_Color);
-=======
-        Confirm.setForeground(new Color(255,145,43));
->>>>>>> 686488e16348e6c7c52319e7cd9ddae660e992c1
         Confirm.setFont(new Font("MV Boli",Font.PLAIN,13));
 		
 	}

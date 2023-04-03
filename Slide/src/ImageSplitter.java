@@ -52,7 +52,7 @@ public class ImageSplitter {
         }
 
         // Mainframe
-        JFrame frame = new JFrame();
+        /*JFrame frame = new JFrame();
         frame.setTitle("Split Image");
         frame.setSize(size + (n - 1) * borderSize, size + (n - 1) * borderSize);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,7 +60,7 @@ public class ImageSplitter {
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(Color.BLACK);
         frame.add(panel);
-        frame.setVisible(true);
+        frame.setVisible(true);*/
         
         return tileImages;
     }
