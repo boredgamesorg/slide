@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.Math;
 import java.util.stream.*;
 
 public class Slide {
@@ -16,12 +17,34 @@ public class Slide {
 		
 		tiles = move(tiles,tiles[7]);
 		showpositions(tiles);
+		
+		tiles = move(tiles, tiles[1]);
+		showpositions(tiles);
+		
+		tiles = move(tiles, tiles[2]);
+		showpositions(tiles);
+		
+		tiles = move(tiles, tiles[0]);
+		showpositions(tiles);
 	}
 	
 	public static int showpositions(Tile[] tiles) {
-		for (Tile tile : tiles) {
-			System.out.println(String.format("Tile at position (%d, %d) with image %s and having ID %d. Empty attribute is %b", tile.getX(), tile.getY(), tile.getImg(), tile.getID(), tile.checkEmpty()));
+		int x = (int) Arrays.asList(tiles).stream().filter(obj -> {return obj.getX() == 0;}).count();
+		int y = (int) Arrays.asList(tiles).stream().filter(obj -> {return obj.getY() == 0;}).count();
+		Tile other = new Tile(-1, "none", -1, -1);
+		
+		for (int i = 0; i < y; i++) {
+			// System.out.println(String.format("Tile at position (%d, %d) with image %s and having ID %d. Empty attribute is %b", tile.getX(), tile.getY(), tile.getImg(), tile.getID(), tile.checkEmpty()));
+			for (int j = 0; j < x; j++) {
+				int thing = j;
+				int other_thing = i;
+				Tile a = (Tile) Arrays.asList(tiles).stream().filter(obj -> {return obj.getX() == thing && obj.getY() == other_thing;}).findFirst().orElse(other);
+				System.out.print(a.getID() + " ");
+			}
+			System.out.println("\n");
 		}
+		System.out.println("\n");
+		System.out.println("\n");
 		return 0;
 	}
 	public static Tile[] setup(String[] links, int n) {
