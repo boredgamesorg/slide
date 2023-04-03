@@ -56,6 +56,16 @@ public class Slide {
 		return tiles;
 	}
 	
+	public static double distance(Tile x, Tile y) {
+		double dist;
+		int xx = x.getX();
+		int yx = y.getX();
+		int xy = x.getY();
+		int yy = y.getY();
+		dist = (int) Math.sqrt(xx * xx + yy * yy);
+		return dist;
+	}
+	
 	public static Tile[] move(Tile[] positions, Tile clicked) {
 		int clickX = clicked.getX();
 		int clickY = clicked.getY();
@@ -67,11 +77,43 @@ public class Slide {
 		
 		int ex = empty.getX();
 		int ey = empty.getY();
-		if (clickX == ex + 1 || clickX == ex - 1 || clickY == ey + 1 || clickY == ey - 1) {
+		if (distance(clicked, empty) == 1) {
 			clicked.setX(ex);
 			clicked.setY(ey);
 			empty.setX(clickX);
 			empty.setY(clickY);
+		} else if (clickX == ex) {
+			if (clickY > ey) {
+				var row = Arrays.asList(positions).stream().filter(obj -> {return obj.getX() == ex && obj.getY() > ey && obj.getY() <= clickY;}).toArray();
+				for (Object i: row) {
+					Tile j = (Tile) i;
+					j.setY(j.getY() - 1);
+				}
+				empty.setY(clickY);
+			} else if (clickY < ey) {
+				var row = Arrays.asList(positions).stream().filter(obj -> {return obj.getX() == ex && obj.getY() < ey && obj.getY() >= clickY;}).toArray();
+				for (Object i: row) {
+					Tile j = (Tile) i;
+					j.setY(j.getY() + 1);
+				}
+				empty.setY(clickY);
+			}
+		} else if (clickY == ey) {
+			if (clickX > ex) {
+				var row = Arrays.asList(positions).stream().filter(obj -> {return obj.getY() == ey && obj.getX() > ex && obj.getX() <= clickX;}).toArray();
+				for (Object i: row) {
+					Tile j = (Tile) i;
+					j.setX(j.getX() - 1);
+				}
+				empty.setX(clickX);
+			} else if (clickX < ex) {
+				var row = Arrays.asList(positions).stream().filter(obj -> {return obj.getY() == ey && obj.getX() < ex && obj.getX() >= clickX;}).toArray();
+				for (Object i: row) {
+					Tile j = (Tile) i;
+					j.setX(j.getX() + 1);
+				}
+				empty.setX(clickX);
+			}
 		}
 		return positions;
 	}
