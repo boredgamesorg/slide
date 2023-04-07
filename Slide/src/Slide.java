@@ -75,6 +75,9 @@ public class Slide {
 			throw new NullPointerException("Couldn't find empty tile!");
 		}
 		
+		if (clicked.checkEmpty() == true) {
+			return positions;
+		}
 		int ex = empty.getX();
 		int ey = empty.getY();
 		if (distance(clicked, empty) == 1) {
@@ -117,32 +120,5 @@ public class Slide {
 		}
 		return positions;
 	}
-	
-//	public static List<Tile> nearby(Tile[][] positions, Tile required) {
-//		List<Tile> adjacentTiles = new ArrayList<Tile>();
-//		int x = required.getX();
-//		int y = required.getY();
-//		
-//		// Above
-//		if (y != 0) {
-//			adjacentTiles.add(positions[x][y-1]);
-//		}
-//		
-//		// Below
-//		if (y != positions.length) {
-//			adjacentTiles.add(positions[x][y+1]);
-//		}
-//		
-//		// Left
-//		if (x != 0) {
-//			adjacentTiles.add(positions[x-1][y]);
-//		}
-//		
-//		// Right
-//		if (x != positions[0].length) {
-//			adjacentTiles.add(positions[x+1][y]);
-//		}
-//		
-//		return adjacentTiles;
-//	}
+
 }
