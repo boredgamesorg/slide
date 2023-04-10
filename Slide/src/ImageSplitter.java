@@ -30,7 +30,7 @@ public class ImageSplitter {
         Border emptyBorder = BorderFactory.createEmptyBorder(borderSize, borderSize, borderSize, borderSize);
         Border lineBorder = BorderFactory.createLineBorder(borderColor);
 
-        String dirName = System.getProperty("user.home") + "/Desktop/TileImage";
+        String dirName = System.getProperty("user.home") + "/Documents/Slide";
         File dir = new File(dirName);
         if (!dir.exists()) {
             dir.mkdir();
