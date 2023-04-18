@@ -15,6 +15,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -31,9 +32,9 @@ public class Slide_Game  implements ActionListener,MouseListener{
 	JLabel Time_Label;
 	JLabel Moves;
 	
+	JButton[] clickObj = new JButton[9];
 	
-	
-	File file = new File("R.jpeg");
+	File file = new File("C:/Users/Rohit Sinha/Desktop/Slide/slide/Slide/assets/R.jpeg");
 	
 	Color Foreground_Color = Color.CYAN;
 	Font Global_Font = new Font("MV Boli",Font.BOLD,30);
@@ -104,33 +105,46 @@ public class Slide_Game  implements ActionListener,MouseListener{
         game_window.setVisible(true);
         
         
-        
+       
         
         
         try {
         	image1 = ImageIO.read(file);
 			TileImages = ImageSplitter.splitImage(image1, 3, 4, Color.BLACK);
-		} catch (IOException e) {
+		 }catch (IOException e) {
 			System.out.println("Error While Parsing Image!");
 		}
+        
+        int index = 0;
+        
         for(int i = 0; i<TileImages.length; i++) {
     		for(int j = 0; j<TileImages.length; j++) {
     			if(!(i == TileImages.length-1 && j==TileImages.length-1)) {
-    				ImageIcon icon = new ImageIcon(TileImages[i][j].getScaledInstance(game_window.getWidth() / TileImages.length, game_window.getHeight() / TileImages.length, 0));
-        			JLabel label = new JLabel(icon);
-        			label.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-        	        Body.add(label);
     				
-    			}
-    			
+    				ImageIcon icon = new ImageIcon(TileImages[i][j].getScaledInstance(game_window.getWidth() / TileImages.length, game_window.getHeight() / TileImages.length, 0));
+        			//JLabel label = new JLabel(icon);
+        			
+        			clickObj[index] = new JButton(icon);       			
+        			clickObj[index].setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        			clickObj[index].addActionListener(this);
+        			
+        	        Body.add(clickObj[index]);
+    				
+        	        index++;
+        	        
+    			}	
     		}
     	}
-		
 	}
 	
 	
 	
 	public void actionPerformed(ActionEvent e) {
+		
+		if(e.getSource()==clickObj[0]) {
+			//System.out.println(0);
+			//System.exit(0);
+		}
 		
 	}
 	@Override
