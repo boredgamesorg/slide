@@ -8,7 +8,7 @@ public class Slide {
 		//Setting up a demo array of images, will get dynamic image source array from Azaken's code once we add that
 		String arr[] = new String[] {"Demo tiles/tile0_0.png", "Demo tiles/tile0_1.png", "Demo tiles/tile0_2.png", "Demo tiles/tile1_0.png", "Demo tiles/tile1_1.png", "Demo tiles/tile1_2.png", "Demo tiles/tile2_0.png", "Demo tiles/tile2_1.png", "Demo tiles/tile2_2.png"};
 		int n = 3;
-		Tile tiles[] = setup(arr, n);
+		Tile tiles[] = setup(arr, n, 3);
 		
 		tiles[8].setEmpty(true);
 		
@@ -47,7 +47,12 @@ public class Slide {
 		System.out.println("\n");
 		return 0;
 	}
-	public static Tile[] setup(String[] links, int n) {
+	
+	
+	public static Tile[] setup(String[] links, int n, int m) {
+		if (links.length != n * m) {
+			throw new IndexOutOfBoundsException("Number of images supplied not enough to make n x m grid!");
+		}
 		Tile tiles[] = new Tile[links.length];
  		for (int i = 0; i < links.length; i++) {
 	 			Tile temp = new Tile(i, links[i], i % n, i / n);
