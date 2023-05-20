@@ -1,14 +1,15 @@
+import javax.swing.JButton;
 
 public class Tile {
 	
 	private int tileID;
-	private String tileImg;
+	private JButton tileImg;
 	private int tileX;
 	private int tileY;
 	private boolean isEmpty = false;
 
 	// Constructors
-	public Tile(int ID, String img ,int x, int y) {
+	public Tile(int ID, JButton img ,int x, int y) {
 		tileID = ID;
 		tileImg = img;
 		tileX = x;
@@ -24,7 +25,7 @@ public class Tile {
 		return tileID;
 	}
 	
-	public String getImg() {
+	public JButton getImg() {
 		return tileImg;
 	}
 	
@@ -45,7 +46,7 @@ public class Tile {
 		tileID = ID;
 	}
 	
-	public void setImg(String Img) {
+	public void setImg(JButton Img) {
 		tileImg = Img;
 	}
 	
