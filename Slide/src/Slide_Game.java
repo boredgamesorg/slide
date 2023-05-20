@@ -112,6 +112,7 @@ public class Slide_Game  implements ActionListener,MouseListener{
         	image1 = ImageIO.read(file);
 			TileImages = ImageSplitter.splitImage(image1, 3, 4, Color.BLACK);
 		 }catch (IOException e) {
+			e.printStackTrace(System.out);
 			System.out.println("Error While Parsing Image!");
 		}
         
