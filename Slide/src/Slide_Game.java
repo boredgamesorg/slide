@@ -34,7 +34,7 @@ public class Slide_Game  implements ActionListener,MouseListener{
 	
 	JButton[] clickObj = new JButton[9];
 	
-	File file = new File("C:/Users/Rohit Sinha/Desktop/Slide/slide/Slide/assets/R.jpeg");
+	File file = new File("Demo tiles/R.jpeg");
 	
 	Color Foreground_Color = Color.CYAN;
 	Font Global_Font = new Font("MV Boli",Font.BOLD,30);
@@ -46,7 +46,7 @@ public class Slide_Game  implements ActionListener,MouseListener{
 		ImageSplitter imageGen= new ImageSplitter();
 		TimerLabel time = new TimerLabel();
 		
-		image = new ImageIcon("C:\\Users\\Rohit Sinha\\SlideGameGUI\\SlideGameGUI\\OIP (1).jpg");
+		image = new ImageIcon("Demo tiles/R.jpeg");
 
 		game_window = new JFrame();
 

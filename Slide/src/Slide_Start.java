@@ -21,7 +21,7 @@ public class Slide_Start implements ActionListener,MouseListener{
     
     Slide_Start(){
 
-        image = new ImageIcon("C:\\Users\\Rohit Sinha\\SlideGameGUI\\SlideGameGUI\\OIP (1).jpg");
+        image = new ImageIcon("Demo tiles/R.jpeg");
 
         frame = new JFrame();
 
@@ -81,7 +81,7 @@ public class Slide_Start implements ActionListener,MouseListener{
         
         Settings = new JButton();
         
-        ImageIcon setpic = new ImageIcon("C:\\Users\\Rohit Sinha\\SlideGameGUI\\SlideGameGUI\\cog_yellow.png");
+        ImageIcon setpic = new ImageIcon("Demo tiles/R.jpeg");
         
         Settings.setIcon(setpic);
         Settings.setPreferredSize(new Dimension(40,40));
