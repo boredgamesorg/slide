@@ -40,7 +40,7 @@ public class Slide_Game  implements ActionListener,MouseListener{
 	JButton[] clickObj = new JButton[9];
 	Tile[] shuffledObj;
 	
-	File file = new File("Demo tiles/R.jpeg");
+	File file = new File("assets/R.jpeg");
 	
 	Color Foreground_Color = Color.CYAN;
 	Font Global_Font = new Font("MV Boli",Font.BOLD,30);
@@ -197,22 +197,10 @@ public class Slide_Game  implements ActionListener,MouseListener{
 	
 	
 	
-	
 	public void actionPerformed(ActionEvent e) {
-		for(int i = 0; i < shuffledObj.length; i++) {
-			if(e.getSource() == clickObj[i]) {
-				
+		for (int i = 0; i < shuffledObj.length; i++) {
+			if (e.getSource() == shuffledObj[i].getImg()) {
 				shuffledObj = Slide.move(shuffledObj, shuffledObj[i]);
-				
-				for(int j = 0; j < shuffledObj.length; j++) {
-					System.out.println("( "+shuffledObj[j].getID()+", "+shuffledObj[j].getX()+", "+shuffledObj[j].getY()+" )");
-				}
-				
-				//Body.removeAll();
-				
-
-				
-				
 			}
 		}
 		for(int j = 0; j < shuffledObj.length; j++) {
