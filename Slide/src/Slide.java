@@ -2,11 +2,13 @@ import java.util.*;
 import java.lang.Math;
 import java.util.stream.*;
 
+import javax.swing.JButton;
+
 public class Slide {
 
 	public static void main(String[] args) {
 		//Setting up a demo array of images, will get dynamic image source array from Azaken's code once we add that
-		String arr[] = new String[] {"Demo tiles/tile0_0.png", "Demo tiles/tile0_1.png", "Demo tiles/tile0_2.png", "Demo tiles/tile1_0.png", "Demo tiles/tile1_1.png", "Demo tiles/tile1_2.png", "Demo tiles/tile2_0.png", "Demo tiles/tile2_1.png", "Demo tiles/tile2_2.png"};
+		JButton arr[] = {};
 		int n = 3;
 		Tile tiles[] = setup(arr, n);
 		
@@ -31,7 +33,7 @@ public class Slide {
 	public static int showpositions(Tile[] tiles) {
 		int x = (int) Arrays.asList(tiles).stream().filter(obj -> {return obj.getX() == 0;}).count();
 		int y = (int) Arrays.asList(tiles).stream().filter(obj -> {return obj.getY() == 0;}).count();
-		Tile other = new Tile(-1, "none", -1, -1);
+		Tile other = new Tile(-1, new JButton(), -1, -1);
 		
 		for (int i = 0; i < y; i++) {
 			// System.out.println(String.format("Tile at position (%d, %d) with image %s and having ID %d. Empty attribute is %b", tile.getX(), tile.getY(), tile.getImg(), tile.getID(), tile.checkEmpty()));
@@ -47,12 +49,15 @@ public class Slide {
 		System.out.println("\n");
 		return 0;
 	}
-	public static Tile[] setup(String[] links, int n) {
+	public static Tile[] setup(JButton[] links, int n) {
 		Tile tiles[] = new Tile[links.length];
+		n = (int)Math.sqrt(n);
  		for (int i = 0; i < links.length; i++) {
 	 			Tile temp = new Tile(i, links[i], i % n, i / n);
 				tiles[i] = temp;
  			}
+ 		tiles[8].setEmpty(true);
+ 		
 		return tiles;
 	}
 	
