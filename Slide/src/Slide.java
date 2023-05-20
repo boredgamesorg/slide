@@ -52,6 +52,9 @@ public class Slide {
 	public static Tile[] setup(JButton[] links, int n) {
 		Tile tiles[] = new Tile[links.length];
 		n = (int)Math.sqrt(n);
+		if ((double)n != Math.sqrt(n)) {
+			throw new IllegalArgumentException("The number of tiles is not a perfect square!");
+		}
  		for (int i = 0; i < links.length; i++) {
 	 			Tile temp = new Tile(i, links[i], i % n, i / n);
 				tiles[i] = temp;
