@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -11,9 +12,11 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -29,19 +32,51 @@ public class Slide_Game  implements ActionListener,MouseListener{
 	BufferedImage image1;
 	BufferedImage[][] TileImages;
 	
+	Tile[] TileArr;
+	
 	JLabel Time_Label;
 	JLabel Moves;
 	
 	JButton[] clickObj = new JButton[9];
+	Tile[] shuffledObj;
 	
-	File file = new File("Demo tiles/R.jpeg");
+	File file = new File("assets/R.jpeg");
 	
 	Color Foreground_Color = Color.CYAN;
 	Font Global_Font = new Font("MV Boli",Font.BOLD,30);
 	
 	
+	public JButton[] setNewPositions() {
+		
+		JButton newPositions[] = new JButton[9];
+		
+		
+		
+		return newPositions;
+	}
+	
+	
+	private void updateButtonPositions() {
+	    Body.removeAll();
+
+	    for (Tile tile : TileArr) {
+	        JButton button = tile.getImg();
+	        Body.add(button);
+	    }
+
+	    Body.revalidate();
+	    Body.repaint();
+	}
+
+	
+	
 	@SuppressWarnings("static-access")
 	Slide_Game(){
+		
+		new Slide();
+		
+		
+		new Shuffling();
 		
 		ImageSplitter imageGen= new ImageSplitter();
 		TimerLabel time = new TimerLabel();
@@ -127,6 +162,7 @@ public class Slide_Game  implements ActionListener,MouseListener{
         			
         			clickObj[index] = new JButton(icon);       			
         			clickObj[index].setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        			clickObj[index].setBackground(Color.BLACK);
         			clickObj[index].addActionListener(this);
         			
         	        Body.add(clickObj[index]);
@@ -134,20 +170,48 @@ public class Slide_Game  implements ActionListener,MouseListener{
         	        index++;
         	        
     			}	
+    			else {
+    				clickObj[index] = new JButton();       			
+        			clickObj[index].setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        			clickObj[index].addActionListener(this);
+        			clickObj[index].setBackground(Color.BLACK);
+        			
+        			//Body.add(clickObj[index]);
+    			}
     		}
     	}
+        
+        
+        //shuffledObj = clickObj;
+        
+        
+        
+        TileArr = Slide.setup(clickObj, 9);
+        
+        shuffledObj = Shuffling.generateShuffledButtons(TileArr);
+        
+        for(int i = 0; i < shuffledObj.length; i++) {
+        	Body.add(shuffledObj[i].getImg());
+    	}
+        
 	}
 	
 	
 	
 	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource()==clickObj[0]) {
-			//System.out.println(0);
-			//System.exit(0);
+		for (int i = 0; i < shuffledObj.length; i++) {
+			if (e.getSource() == shuffledObj[i].getImg()) {
+				shuffledObj = Slide.move(shuffledObj, shuffledObj[i]);
+			}
 		}
-		
+		for(int j = 0; j < shuffledObj.length; j++) {
+			int k = j;
+			var t = Arrays.asList(shuffledObj).stream().filter(obj -> {return obj.getX() == k%3 && obj.getY() == k/3;}).findFirst().orElse(null);
+			Tile temp = (Tile)t;
+        	Body.add(temp.getImg());
+    	}
 	}
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
