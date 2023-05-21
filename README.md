@@ -11,7 +11,7 @@ Try to complete in the lowest amount of time to get ranked!
 
 Click on a tile to try to move it.  
 If there is an empty tile next to it, the clicked tile will move into the empty space.  
-If the empty tile is on the same row/column as the clicked tile, the entire row/column, until the empty space shifts to fill the empty space.
+If the empty tile is on the same row/column as the clicked tile, the entire row/column, until the empty space, shifts to fill the empty space.
 
 ## Codebase
 
@@ -21,5 +21,5 @@ The GUI is made on Java Swing. Backend code is made using Java.
 
 ## Contributors
 
-GUI by @Azaken1248  
-Backend code by @poseidon0z
+Done in collaboration by [@poseidon0z](https://github.com/poseidon0z) and [@Azaken](https://github.com/Azaken1248) \
+Thanks to [@ItsRish141](https://github.com/ItsRish141) for the help with shuffling
