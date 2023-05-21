@@ -2,68 +2,52 @@ import javax.swing.JButton;
 
 public class Tile {
 	
-	private int tileID;
-	private JButton tileImg;
-	private int tileX;
-	private int tileY;
-	private boolean isEmpty = false;
-
+	private int id;
+	private JButton btn;
+	private boolean empty = false;
+	
 	// Constructors
-	public Tile(int ID, JButton img ,int x, int y) {
-		tileID = ID;
-		tileImg = img;
-		tileX = x;
-		tileY = y;
+	public Tile(int id, JButton btn) {
+		this.id = id;
+		this.btn = btn;
 	}
-
 	
-	public Tile(){}
+	public Tile(int id) {
+		this.id = id;
+	}
 	
+	public Tile(Tile t) {
+		this.id = t.id;
+		this.btn = t.btn;
+		this.empty = t.empty;
+	}
+	
+	public Tile() {}
 	
 	//getters
-	public int getID() {
-		return tileID;
+	public int id() {
+		return id;
 	}
 	
-	public JButton getImg() {
-		return tileImg;
+	public JButton btn() {
+		return btn;
 	}
 	
-	public int getX() {
-		return tileX;
+	public boolean empty() {
+		return empty;
 	}
 	
-	public int getY() {
-		return tileY;
+	
+	//setters
+	public void setId(int id) {
+		this.id = id;
 	}
 	
-	public boolean checkEmpty() {
-		return isEmpty;
+	public void setbtn(JButton btn) {
+		this.btn = btn;
 	}
 	
-	//Setters
-	public void setID(int ID) {
-		tileID = ID;
+	public void setEmpty(boolean empty) {
+		this.empty = empty;
 	}
-	
-	public void setImg(JButton Img) {
-		tileImg = Img;
-	}
-	
-	public void setX(int x) {
-		tileX = x;
-	}
-	
-	public void setY(int y) {
-		tileY = y;
-	}
-	
-	public void setEmpty(boolean a) {
-		isEmpty = a;
-	}
-
-	public static void main(String[] args) {
-
-	}
-
-}
+};
