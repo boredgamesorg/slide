@@ -1,12 +1,12 @@
 import javax.swing.JButton;
 
 public class testingCode {
+	
+	// Run to check if back end works, without even initializing front end tasks
 	public static void main(String[] args) {
-		//Setting up a demo array of images, will get dynamic image source array from Azaken's code once we add that
 		JButton arr[] = {new JButton(), new JButton(), new JButton(), new JButton(), new JButton(), new JButton(), new JButton(), new JButton(), new JButton()};
 		Tile tiles[] = tileSetup.setup(arr);
 				
-		// Placeholder code to test if everything is working as it is supposed to
 		showPositions(tiles);
 		
 		tiles = tileMovement.move(tiles,7);

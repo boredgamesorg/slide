@@ -28,7 +28,7 @@ public class shuffle {
                 numSwaps--;
             }
         }
-
+        tileSetup.emptyTileIndex = emptyRow + emptyCol * 3;
         return buttons;
     }
 
