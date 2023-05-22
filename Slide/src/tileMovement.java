@@ -13,6 +13,10 @@ public class tileMovement {
 		int ex = empty % dimension;
 		int ey = empty / dimension;
 		
+		if (cx != ex && cy != ey) {
+			return positions;
+		}
+		
 		// System.out.println("Positions are: (" + cx + ", " + cy + ") and (" + ex + ", " + ey + ")");
 		
 		if (cy == ey) {
@@ -50,7 +54,7 @@ public class tileMovement {
 				positions[clicked] = emptyTile;
 			}
 		}
-		
+
 		tileSetup.emptyTileIndex = clicked;
 		
 		return positions;
