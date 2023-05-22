@@ -168,7 +168,7 @@ public class old__Slide_Game  implements ActionListener,MouseListener{
         TileArr = tileSetup.setup(clickObj);
         
         shuffledObj = shuffle.generateShuffledButtons(TileArr);
-        testingCode.showPositions(shuffledObj);
+        // testingCode.showPositions(shuffledObj);
         for(int i = 0; i < shuffledObj.length; i++) {
         	Body.add(shuffledObj[i].btn());
     	}
@@ -181,13 +181,16 @@ public class old__Slide_Game  implements ActionListener,MouseListener{
 		for (int i = 0; i < shuffledObj.length; i++) {
 			if (e.getSource() == shuffledObj[i].btn()) {
 				shuffledObj = tileMovement.move(shuffledObj, i);
-				testingCode.showPositions(shuffledObj);
+				// testingCode.showPositions(shuffledObj);
 				break;
 			}
 		}
 		for(Tile t : shuffledObj) {
         	Body.add(t.btn());
     	}
+		if (tileSetup.completed(shuffledObj) == true) {
+			System.out.println("Completed!");
+		}
 	}
 
 	@Override

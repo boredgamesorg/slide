@@ -36,4 +36,13 @@ public class tileSetup {
 		return board;
 	}
 	
+	public static boolean completed(Tile[] tileArr) {		
+		for (int i = 0; i < tileArr.length; i++) {
+			if (tileArr[i].id() != i) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 }
