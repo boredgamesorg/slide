@@ -22,4 +22,4 @@ The GUI is made on Java Swing. Backend code is made using Java.
 ## Contributors
 
 Done in collaboration by [@poseidon0z](https://github.com/poseidon0z) and [@Azaken](https://github.com/Azaken1248) \
-Thanks to [@ItsRish141](https://github.com/ItsRish141) for the help with shuffling
+
